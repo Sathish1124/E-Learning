@@ -39,16 +39,3 @@ public class ModuleServiceImpl implements ModuleService {
 
     }
 }
-
-//{
-//        Optional<Course> optionalCourse = courseRepository.findById(courseId);
-//
-//        if (optionalCourse.isPresent()) {
-//        Course course = optionalCourse.get();
-//        subCourse.setParentCourse(course);
-//        SubCourse savedSubCourse = subCourseRepository.save(subCourse);
-//        return ResponseEntity.status(HttpStatus.CREATED).body(savedSubCourse);
-//        }
-//        else {
-//        return ResponseEntity.notFound().build();
-//        }
