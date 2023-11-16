@@ -42,37 +42,18 @@ class CourseServiceImplTest {
     @Test
     public void saveCourse()
     {
-        // given - precondition or setup
 
-//        given(courseRepository.findByEmail(course.getEmail()))
-//                .willReturn(Optional.empty());
-
-        //given(courseRepository.save(course)).willReturn(course);
         when(courseRepository.save(course)).thenReturn(course);
         System.out.println(courseRepository);
         System.out.println(courseService);
 
-        // when -  action or the behaviour that we are going test
+
         ResponseEntity<String> savedCourse = courseService.saveCourse(course);
 
         System.out.println(savedCourse);
-        // then - verify the output
+
         assertThat(savedCourse).isNotNull();
     }
-
-
-
-
-
-//    @Test
-//    void saveCourse() {
-//        mock(Course.class);
-//        mock(CourseRepository.class);
-//
-//        when(courseRepository.save(course)).thenReturn(C);
-//        assertThat(courseService.saveCourse(cloudVendor)).isEqualTo("Success");
-//
-//    }
 
     @Test
     void fetchCourse() {
@@ -84,10 +65,9 @@ class CourseServiceImplTest {
 
         //given(courseRepository.findAll()).willReturn(List.of(course,course1));
         when(courseRepository.findAll()).thenReturn(List.of(course,course1));
-        // when -  action or the behaviour that we are going test
+
         List<Course> courseList = courseService.fetchCourse();
 
-        // then - verify the output
         assertThat(courseList).isNotNull();
         assertThat(courseList.size()).isEqualTo(2);
     }
